@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Per te ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0b0d;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* INTRO */
+
+.intro {
+    height: 100svh;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.05) 20%,
+            rgba(0,0,0,0.35) 55%,
+            rgba(0,0,0,0.92) 100%
+        ),
+        url("foto1.jpg") center/cover no-repeat;
+    transform: scale(1.03);
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 30px 25px 55px;
+    text-align: center;
+    animation: fadeUp 1.5s ease;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 14px;
+}
+
+.intro h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 14vw, 80px);
+    font-weight: 400;
+    line-height: 0.95;
+    margin-bottom: 18px;
+}
+
+.intro-date {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.scroll {
+    margin-top: 35px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.scroll span {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 90px 22px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.text {
+    color: rgba(255,255,255,0.72);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* PHOTO */
+
+.big-photo {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+    margin-top: 35px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+/* QUOTE */
+
+.quote {
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.quote p {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    line-height: 1.35;
+}
+
+.quote span {
+    display: block;
+    margin-top: 25px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.gallery img:nth-child(3) {
+    grid-column: span 2;
+    aspect-ratio: 16 / 10;
+}
+
+/* DATE */
+
+.date-box {
+    margin-top: 35px;
+    padding: 35px 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+}
+
+.date-main {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.date-sub {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.5;
+}
+
+/* MUSIC */
+
+.music-card {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+}
+
+.music-title {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+
+.music-artist {
+    font-size: 13px;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+audio {
+    width: 100%;
+}
+
+/* FINAL MESSAGE */
+
+.final {
+    text-align: center;
+    padding-bottom: 120px;
+}
+
+.heart {
+    font-size: 38px;
+    margin-bottom: 25px;
+    animation: heartbeat 1.7s infinite;
+}
+
+.final h2 {
+    font-size: 44px;
+}
+
+.signature {
+    margin-top: 35px;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    opacity: 0.75;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.3;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 700px) {
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery img:nth-child(3) {
+        grid-column: auto;
+        aspect-ratio: 1 / 1.25;
+    }
+
+    section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+
+<header class="intro">
+
+    <div class="intro-content">
+
+        <div class="small-title">
+            Per te
+        </div>
+
+        <h1>
+            Noi.
+        </h1>
+
+        <div class="intro-date">
+            28.08.25 — 28.08.26
+        </div>
+
+        <div class="scroll">
+            Scorri
+            <span>↓</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- INTRO MESSAGE -->
+
+<section>
+
+    <div class="section-label">
+        Un piccolo posto per noi
+    </div>
+
+    <h2>
+        Tutto quello che voglio ricordare.
+    </h2>
+
+    <p class="text">
+        Ho raccolto qui alcuni dei momenti più belli
+        che abbiamo vissuto insieme.
+        Non sono semplicemente delle fotografie:
+        sono pezzi della nostra storia.
+    </p>
+
+    <img
+        src="foto2.jpg"
+        class="big-photo"
+        alt="Una nostra foto"
+    >
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <p>
+        "Tra tutte le persone che avrei potuto incontrare,
+        sono felice di aver incontrato te."
+    </p>
+
+    <span>
+        Per sempre noi
+    </span>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section>
+
+    <div class="section-label">
+        I nostri ricordi
+    </div>
+
+    <h2>
+        Noi, nel tempo.
+    </h2>
+
+    <div class="gallery">
+
+        <img src="foto3.jpg" alt="Ricordo">
+        <img src="foto4.jpg" alt="Ricordo">
+        <img src="foto5.jpg" alt="Ricordo">
+        <img src="foto6.jpg" alt="Ricordo">
+        <img src="foto7.jpg" alt="Ricordo">
+        <img src="foto8.jpg" alt="Ricordo">
+
+    </div>
+
+</section>
+
+
+<!-- ANNIVERSARY -->
+
+<section>
+
+    <div class="section-label">
+        Il nostro giorno
+    </div>
+
+    <h2>
+        Un anno.
+    </h2>
+
+    <p class="text">
+        Un anno di risate, momenti stupidi,
+        momenti bellissimi, giornate insieme
+        e ricordi che non cambierei con niente.
+    </p>
+
+    <div class="date-box">
+
+        <div class="date-main">
+            28.08.25 — 28.08.26
+        </div>
+
+        <div class="date-sub">
+            PRIMO ANNIVERSARIO
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section>
+
+    <div class="section-label">
+        La nostra canzone
+    </div>
+
+    <h2>
+        Premi play.
+    </h2>
+
+    <div class="music-card">
+
+        <div class="music-title">
+            La nostra canzone
+        </div>
+
+        <div class="music-artist">
+            ❤️ Per noi
+        </div>
+
+        <audio controls>
+            <source src="canzone.mp3" type="audio/mpeg">
+            Il tuo browser non supporta l'audio.
+        </audio>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="heart">
+        ❤️
+    </div>
+
+    <div class="section-label">
+        Alla fine
+    </div>
+
+    <h2>
+        Grazie per essere tu.
+    </h2>
+
+    <p class="text">
+        Spero che ogni volta che tornerai
+        su questa pagina ti ricorderai
+        di tutti i momenti che abbiamo condiviso.
+    </p>
+
+    <div class="signature">
+        Ti amo.
+    </div>
+
+</section>
+
+
+<footer>
+
+    28.08.25 — 28.08.26
+
+</footer>
+
+
+</body>
+</html>
